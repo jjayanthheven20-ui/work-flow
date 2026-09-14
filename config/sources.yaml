@@ -1,0 +1,24 @@
+# Real public job-source configuration.
+greenhouse_board_tokens: []
+lever_companies: []
+career_urls: []
+search:
+  keywords:
+    - HR Executive
+    - HR Recruiter
+    - Human Resources
+    - Talent Acquisition
+    - Recruiter
+    - HR Operations
+  locations:
+    - Bengaluru
+    - Bangalore
+    - Karnataka
+    - Mysuru
+    - Coimbatore
+    - Kerala
+    - Remote
+  exclude_keywords:
+    - internship
+    - unpaid
+    - commission only
