@@ -1,11 +1,44 @@
-<div align="center">
+# JAY Job AI
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Personal AI job-search command center for real opportunities, resume matching, application preparation and interview preparation.
 
-  <h1>Built with AI Studio</h2>
+## Public website
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+The `frontend/` directory is deployed with GitHub Pages by `.github/workflows/pages.yml`.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Agent features
 
-</div>
+- PDF/DOCX resume parsing
+- Greenhouse public job discovery
+- Lever public job discovery
+- Company career-page discovery
+- HR-focused filtering for Bengaluru, Mysuru, Coimbatore, Kerala and remote roles
+- AI 0–100 job-fit scoring
+- Truthful tailored application preparation
+- Interview preparation
+- SQLite tracking
+- Playwright application-page inspection/review
+
+## Windows backend setup
+
+```powershell
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+playwright install chromium
+Copy-Item .env.example .env
+```
+
+Add your OpenAI API key to `.env` locally. **Never commit the key to GitHub.**
+
+Configure real public job sources in `config/sources.yaml`, then run:
+
+```powershell
+uvicorn backend.main:app --reload --port 8000
+```
+
+For production, deploy the backend separately and use HTTPS. The public frontend must never contain your OpenAI API key.
+
+## Application safety
+
+The agent discovers jobs, scores them, drafts truthful application content and can inspect application pages. Final submission remains a user-approved action. It must not fabricate experience, education, work authorization, salary history or other candidate facts.
